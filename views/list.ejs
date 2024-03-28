@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div class="box" id="heading">
+      <h1><%= kindOfDay %></h1>
+    </div>
+<!-- Loop through checkedItems array and display its contents
+    <div class="checked-items">
+      <h2>Checked Items</h2>
+      <ul>
+          <% checkedItems.forEach(item => { %>
+              <li><%= item %></li>
+              
+          <% }); %>
+      </ul>
+    </div> -->
+
+    <div class="box">
+        
+        <% for (let i = 0; i < newListItems.length; i++) { %>
+          <div class="item">
+              <input id="listen" class="<%= i %>" type="checkbox" <%= checkedItems.includes(i.toString()) ? 'checked' : '' %> >
+              <p class="<%= checkedItems.includes(i.toString()) ? 'checkedp' : '123' %>"><%= newListItems[i] %></p>
+              <!-- <p> <%= checkedItems.includes(i.toString()) %> <%= i %></p> -->
+          </div>
+        <% } %>
+
+
+       <!-- Input and add new item -->
+      <form class="item" action="/" method="POST">
+         <input type="text" name="newItem" placeholder="New item" autocomplete="off">
+         <button type="submit" name="button">+</button>
+      </form>
+      
+    </div>
+
+
+
+
+
+
+
+    <footer class="footer">
+      <div class="name">
+        <p>Carefully Nurtured by <b>Md. Khatami</b></p>
+      </div>
+    </footer>
+
+    <script src="scrpt/helper.js"></script>
+  </body>
+  
+</html>
