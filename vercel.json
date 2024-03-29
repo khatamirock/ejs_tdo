@@ -5,7 +5,7 @@
         {
 
         "src": "./index.js",
-        "use": "avercel/node"
+        "use": "@vercel/node"
 
         }
 ],
