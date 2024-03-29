@@ -8,6 +8,7 @@ Awesome to do list using EJS
 
 ## to deploy
 - download the code 
+- run `npm install`
 - run `node index.js`
 - open `localhost:3000`
 - enjoy 
