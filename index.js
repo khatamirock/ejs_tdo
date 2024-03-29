@@ -41,7 +41,11 @@ app.post("/", function(req, res) {
 	res.redirect("/");
 })
 
- 
+
+app.get('test',function(req,res){
+    return 'kire mama vlo acos ???';
+})
+
 
 app.post('/box', function(req, res) {
     var index = req.body.index; // Access index from req.body
