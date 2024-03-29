@@ -2,4 +2,12 @@
 
 Awesome to do list using EJS
 
-![Screenshot (3)](https://user-images.githubusercontent.com/60859812/85915929-9f479200-b800-11ea-8c67-a27f99607946.png)
+![ScreenShot_20240329160235](https://github.com/khatamirock/ejs_tdo/assets/67198296/8bc5f2b4-a4ae-4af7-8eef-9f478db0a8b4)
+
+
+
+## to deploy
+- download the code 
+- run `node index.js`
+- open `localhost:3000`
+- enjoy 
