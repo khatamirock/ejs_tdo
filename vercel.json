@@ -1,0 +1,20 @@
+ {
+
+"version": 2.1,
+"builds": [
+        {
+
+        "src": "./index.js",
+        "use": "avercel/node"
+
+        }
+],
+"routes": [
+        {
+                "src": "/( .* )",
+                "dest": "/"
+
+        }
+        ]
+
+}
