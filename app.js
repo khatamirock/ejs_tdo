@@ -5,8 +5,8 @@ const date = require(__dirname + "/date.js");
 const app = express();
 
 //to do list items array
-const items = ["Code", "Nap", "Code some m123ore"];
-var chekdItms=['10','7'];
+const items = ["Bring", "Me", "FOOD"];
+var chekdItms=[];
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({extended: true}))
