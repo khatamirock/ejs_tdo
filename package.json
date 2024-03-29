@@ -1,27 +1,56 @@
 {
-  "name": "todolist-v1",
-  "version": "1.0.0",
-  "description": "To Do list version 1",
-  "main": "app.js",
-  
-  "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "ejs": "^3.1.9",
-    "express": "^4.19.2",
-    "nodemon": "^2.0.22"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mikaelaliwanag/to-do-list-v1.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mikaelaliwanag/to-do-list-v1/issues"
-  },
-  "homepage": "https://github.com/mikaelaliwanag/to-do-list-v1#readme"
+	"name": "todolist-v1",
+	"version": "1.0.0",
+	"description": "To Do list version 1",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.20.2",
+		"ejs": "^3.1.9",
+		"express": "^4.19.2",
+		"nodemon": "^2.0.22"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mikaelaliwanag/to-do-list-v1.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mikaelaliwanag/to-do-list-v1/issues"
+	},
+	"homepage": "https://github.com/mikaelaliwanag/to-do-list-v1#readme",
+	"Transform": "AWS::Serverless-2016-10-31",
+	"Resources": {
+		"Api": {
+			"Type": "AWS::Serverless::Api",
+			"Properties": {
+				"Name": {
+					"Fn::Sub": [
+						"${ResourceName} From Stack ${AWS::StackName}",
+						{
+							"ResourceName": "Api"
+						}
+					]
+				},
+				"StageName": "Prod",
+				"DefinitionBody": {
+					"openapi": "3.0",
+					"info": {},
+					"paths": {
+						"/": {
+							"get": {
+								"responses": {}
+							}
+						}
+					}
+				},
+				"EndpointConfiguration": "REGIONAL",
+				"TracingEnabled": true
+			}
+		}
+	}
 }
