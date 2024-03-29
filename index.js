@@ -42,9 +42,21 @@ app.post("/", function(req, res) {
 })
 
 
-app.get('test',function(req,res){
-    return 'kire mama vlo acos ???';
-})
+app.get('/t', function(req, res) {
+    const messages = [
+        "Hello, world!",
+        "This is a test message.",
+        "Random message number 3.",
+        "Testing, testing, 123."
+    ];
+
+    // Generate a random index to select a message from the array
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    const randomMessage = messages[randomIndex];
+
+    // Send the random message as JSON response
+    res.json({ message: randomMessage });
+});
 
 
 app.post('/box', function(req, res) {
@@ -53,7 +65,7 @@ app.post('/box', function(req, res) {
     const indexToRemove = chekdItms.indexOf(index);
 
     if(indexToRemove !== -1){
-        // chekdItms.pop(index);
+       
         chekdItms.splice(indexToRemove, 1);
     }
     else{
